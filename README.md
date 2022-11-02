@@ -1,5 +1,5 @@
 # monbazoumodinstaller
-Easily install mods for Mon Bazou using Drag and Drop
+Easily install simple one-dll mods for Mon Bazou using Drag and Drop
 
 ## Workflow
 1. Create a new branch
