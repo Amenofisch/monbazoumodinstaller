@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace MonBazouModInstaller
 {
@@ -12,6 +12,8 @@ namespace MonBazouModInstaller
     {
         private static List<string> _droppedFilePaths = new List<string>();
         private static string _gamePath;
+
+        private static string[] _unsupportedMods = {"FusionTranslationMod.dll", "MonBazouCustomAssets.dll", "CustomMap.dll", "CustomParts.dll"};
 
         // Define ExitCodes for easier debugging and usage
         [Flags]
@@ -23,7 +25,8 @@ namespace MonBazouModInstaller
             FileNotDll = 4,
             GameNotFound = 8,
             BepInExNotFound = 16,
-            ErrorWhileCopy = 32
+            ErrorWhileCopy = 32,
+            Unsupported = 64
         }
         
         #region GetGameFolder Method
@@ -75,6 +78,15 @@ namespace MonBazouModInstaller
                         Console.WriteLine(file.Name + " has wrong extension (only .dll allowed atm)");
                         Environment.Exit((int)ExitCode.FileNotDll);
                     }
+                    for(int i = 0; i < _unsupportedMods.Length; i++)
+                    {
+                        if(file.Name == _unsupportedMods[i])
+                        {
+                            Console.WriteLine(file.Name + " is on the list of unsupported mods!");
+                            Console.WriteLine("This is due to a limitation in the code atm!");
+                            Environment.Exit((int)ExitCode.Unsupported);
+                        }
+                    }
                     _droppedFilePaths.Add(arg);
                     Console.WriteLine("Added " + file.Name + " to list"); 
                 }
@@ -101,7 +113,7 @@ namespace MonBazouModInstaller
                 FileInfo fileInfo = new FileInfo(file);
                 try
                 {
-                    File.Copy(file, _gamePath, true);
+                    File.Copy(file, _gamePath + @"\BepInEx\plugins\" + fileInfo.Name, true);
                     Console.WriteLine("Copying " + fileInfo.Name + " to game folder!");
                 } catch(Exception ex)
                 {
@@ -113,6 +125,7 @@ namespace MonBazouModInstaller
 
             Console.WriteLine("Copied " + _droppedFilePaths.Count + " mods to game folder");
             Console.WriteLine("Thanks for using MonBazou Mod Installer! Made by Amenofisch#5368");
+            Thread.Sleep(5000);
             Environment.Exit((int)ExitCode.Success);
         }
     }
