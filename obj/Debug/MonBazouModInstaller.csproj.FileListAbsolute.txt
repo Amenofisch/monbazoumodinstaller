@@ -1,8 +1,0 @@
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\bin\Debug\MonBazouModInstaller.exe.config
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\bin\Debug\MonBazouModInstaller.exe
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\bin\Debug\MonBazouModInstaller.pdb
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\obj\Debug\MonBazouModInstaller.csproj.AssemblyReference.cache
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\obj\Debug\MonBazouModInstaller.csproj.SuggestedBindingRedirects.cache
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\obj\Debug\MonBazouModInstaller.csproj.CoreCompileInputs.cache
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\obj\Debug\MonBazouModInstaller.exe
-P:\00 - Sort\00 - projects\MonBazouCheat\MonBazouModInstaller\MonBazouModInstaller\obj\Debug\MonBazouModInstaller.pdb
