@@ -123,7 +123,7 @@ namespace MonBazouModInstaller
                 }
             }
 
-            Console.WriteLine("Copied " + _droppedFilePaths.Count + " mods to game folder");
+            Console.WriteLine("Copied " + _droppedFilePaths.Count + " mod(s) to game folder");
             Console.WriteLine("Thanks for using MonBazou Mod Installer! Made by Amenofisch#5368");
             Thread.Sleep(5000);
             Environment.Exit((int)ExitCode.Success);
